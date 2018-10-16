@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { appConfig } from '../../config' ;
 
 @Injectable()
 
 export class AppService {
-
-  private exchangeRatesUrl = 'https://minfin.com.ua/currency/usd/';
-
   constructor(public httpClient: HttpClient) {}
 
-  async getExchangeRates() {
-    return await this.httpClient.get(this.exchangeRatesUrl).toPromise();
+  getExchangeRates() {
+    const exchangeRatesUrl = appConfig.serverUrl + 'currency-rates';
+    return this.httpClient.get(exchangeRatesUrl);
     // /*return null;
     // */console.log('No issues, I will wait until promise is resolved..');
   }

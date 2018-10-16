@@ -15,8 +15,10 @@ export class AppComponent {
   }
 
   private initData(): void {
-    // getExchangeRates
-    const temp = this.appService.getExchangeRates();
-    console.log(temp);
+    const getExchangeRates = this.appService.getExchangeRates();
+    const onSuccess = (data) => {
+        console.log(data);
+    };
+    getExchangeRates.subscribe(onSuccess);
   }
 }
