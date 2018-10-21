@@ -1,0 +1,17 @@
+.toolbar-title{
+  width: 100%;
+  text-align: center;
+}
+
+.spinner-container{
+
+}
+
+.mat-form-field{
+  display: block;
+  width: 100%;
+}
+
+.sign-container{
+  margin-right: 10px;
+}

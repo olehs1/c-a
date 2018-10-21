@@ -1,3 +1,9 @@
 export interface IExchangeRates {
-  someData: string;
+  usdBuy: number;
+  usdSell: number;
+}
+
+export interface IExchangeRatesInput {
+  usdSell: number;
+  uahSell: number;
 }

@@ -1,0 +1,39 @@
+<div *ngIf="exchangeRates">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <div class="toolbar-title">{{ title }}</div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-card>
+    <mat-list>
+      <mat-list-item>Today sell for {{ exchangeRates.usdSell }}</mat-list-item>
+      <mat-list-item>
+        <div class="sign-container">$</div>
+        <mat-form-field class="example-full-width">
+          <input matInput
+                 matAutosize="true"
+                 [(ngModel)]="exchangeRatesModel.usdSell"
+                 [value]="getConvertedUahToUsd()"
+                 type="number">
+        </mat-form-field>
+      </mat-list-item>
+      <!--<mat-divider></mat-divider>-->
+      <mat-list-item>
+        <div class="sign-container">₴</div>
+        <mat-form-field class="example-full-width">
+          <input matInput
+                 type="number"
+                 [(ngModel)]="exchangeRatesModel.uahSell"
+                 [value]="getConvertedUsdToUah()">
+        </mat-form-field>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
+
+<div *ngIf="!exchangeRates" class="spinner-container">
+  <mat-progress-spinner
+    [mode]="'indeterminate'"
+    [color]="'primary'">
+  </mat-progress-spinner>
+</div>

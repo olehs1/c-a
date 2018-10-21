@@ -1,5 +1,5 @@
 export const appConfig: IAppConfig = {
-  serverUrl: 'http://localhost:3000/'
+  serverUrl: 'http://localhost:3333/'
 };
 
 export interface IAppConfig {
