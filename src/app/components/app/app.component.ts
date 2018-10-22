@@ -6,6 +6,8 @@ import {
 } from '../../interfaces/app.interface';
 import _ from 'lodash';
 
+const ROUNDING_PRECISION = 2;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -37,10 +39,10 @@ export class AppComponent {
   }
 
   getConvertedUsdToUah(): number {
-    return _.ceil(this.exchangeRatesModel.usdSell * this.exchangeRates.usdSell);
+    return _.multiply(this.exchangeRatesModel.usdSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
   }
 
   getConvertedUahToUsd(): number {
-    return _.ceil(this.exchangeRatesModel.uahSell / this.exchangeRates.usdSell);
+    return _.divide(this.exchangeRatesModel.uahSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
   }
 }
