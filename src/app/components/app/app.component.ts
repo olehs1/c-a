@@ -31,7 +31,7 @@ export class AppComponent {
         usdBuy: 28,
         usdSell: 28.2
       };
-      // = response;
+      // this.exchangeRates = response;
     };
     getExchangeRates.subscribe(onSuccess);
   }
