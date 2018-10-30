@@ -1,4 +1,4 @@
 @font-face {
-  font-family: 'YourFontName'; /*a name to be used later*/
-  src: url('http://domain.com/fonts/font.ttf'); /*URL to font*/
+  font-family: Roboto; /*a name to be used later*/
+  src: url('../fonts/Roboto-Regular.ttf'); /*URL to font*/
 }

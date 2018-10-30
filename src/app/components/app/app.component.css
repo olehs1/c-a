@@ -1,10 +1,14 @@
 .toolbar-title{
   width: 100%;
   text-align: center;
+  font-size: 20px;
 }
 
 .spinner-container{
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50%;
 }
 
 .mat-form-field{
@@ -14,4 +18,12 @@
 
 .sign-container{
   margin-right: 10px;
+}
+
+.text-title{
+  font-size: 20px;
+}
+
+.currency-item{
+  font-size: 18px;
 }

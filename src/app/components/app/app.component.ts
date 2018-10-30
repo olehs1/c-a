@@ -29,11 +29,11 @@ export class AppComponent {
   private initData(): void {
     const getExchangeRates = this.appService.getExchangeRates();
     const onSuccess = (response: IExchangeRates) => {
-      this.exchangeRates = {
-        usdBuy: 28,
-        usdSell: 28.2
-      };
-      // this.exchangeRates = response;
+      // this.exchangeRates = {
+      //   usdBuy: 28,
+      //   usdSell: 28.2
+      // };
+      this.exchangeRates = response;
     };
     getExchangeRates.subscribe(onSuccess);
   }

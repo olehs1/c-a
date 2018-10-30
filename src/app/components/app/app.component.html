@@ -6,8 +6,10 @@
   </mat-toolbar>
   <mat-card>
     <mat-list>
-      <mat-list-item>Today sell for {{ exchangeRates.usdSell }}</mat-list-item>
-      <mat-list-item>
+      <mat-list-item class="text-title">
+        Today sell for {{ exchangeRates.usdSell }}
+      </mat-list-item>
+      <mat-list-item class="currency-item">
         <div class="sign-container">$</div>
         <mat-form-field class="example-full-width">
           <input matInput
@@ -17,8 +19,7 @@
                  type="number">
         </mat-form-field>
       </mat-list-item>
-      <!--<mat-divider></mat-divider>-->
-      <mat-list-item>
+      <mat-list-item class="currency-item">
         <div class="sign-container">₴</div>
         <mat-form-field class="example-full-width">
           <input matInput
