@@ -17,12 +17,10 @@ const ROUNDING_PRECISION = 2;
 export class AppComponent {
   title = 'USD';
   exchangeRates: IExchangeRates = null;
-  exchangeRatesModel: IExchangeRatesInput = {
-    usdSell: null,
-    uahSell: null
-  };
+  exchangeRatesModel: IExchangeRatesInput;
 
   constructor(private appService: AppService) {
+    this.clearAll();
     this.initData();
   }
 
@@ -39,10 +37,23 @@ export class AppComponent {
   }
 
   getConvertedUsdToUah(): number {
-    return _.multiply(this.exchangeRatesModel.usdSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
+    // if (!_.isEmpty(this.exchangeRatesModel.usdSell)) {
+    const result = _.multiply(this.exchangeRatesModel.usdSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
+    return result;
+    // }
   }
 
   getConvertedUahToUsd(): number {
-    return _.divide(this.exchangeRatesModel.uahSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
+    // if (!_.isEmpty(this.exchangeRatesModel.uahSell)) {
+    const result = _.divide(this.exchangeRatesModel.uahSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
+    return result;
+    // }
+  }
+
+  clearAll(): void {
+    this.exchangeRatesModel = {
+      usdSell: null,
+      uahSell: null
+    };
   }
 }

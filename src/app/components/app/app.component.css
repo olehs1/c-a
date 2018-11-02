@@ -27,3 +27,8 @@
 .currency-item{
   font-size: 18px;
 }
+
+.clear-button-container{
+  display: flex;
+  justify-content: flex-end
+}
