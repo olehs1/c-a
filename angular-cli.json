@@ -1,0 +1,5 @@
+{
+  "apps": [
+    { "serviceWorker": true }
+  ]
+}
