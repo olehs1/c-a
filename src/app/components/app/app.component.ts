@@ -37,17 +37,22 @@ export class AppComponent {
   }
 
   getConvertedUsdToUah(): number {
-    // if (!_.isEmpty(this.exchangeRatesModel.usdSell)) {
-    const result = _.multiply(this.exchangeRatesModel.usdSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
-    return result;
-    // }
+    const result = _.multiply(this.exchangeRatesModel.usdSell, this.exchangeRates.usdSell);
+    if (result === 0) {
+      return null;
+    } else {
+      return result.toFixed(ROUNDING_PRECISION);
+    }
   }
 
   getConvertedUahToUsd(): number {
-    // if (!_.isEmpty(this.exchangeRatesModel.uahSell)) {
-    const result = _.divide(this.exchangeRatesModel.uahSell, this.exchangeRates.usdSell).toFixed(ROUNDING_PRECISION);
-    return result;
-    // }
+    const result = _.divide(this.exchangeRatesModel.uahSell, this.exchangeRates.usdSell);
+    if (result === 0) {
+      return null;
+    } else {
+      return result.toFixed(ROUNDING_PRECISION);
+    }
+
   }
 
   clearAll(): void {
