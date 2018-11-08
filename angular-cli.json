@@ -1,5 +1,8 @@
 {
   "apps": [
     { "serviceWorker": true }
+  ],
+  "assets": [
+    "manifest.json"
   ]
 }

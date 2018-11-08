@@ -14,7 +14,8 @@
         <mat-form-field class="example-full-width">
           <input matInput
                  matAutosize="true"
-                 [(ngModel)]="exchangeRatesModel.usdSell"
+                 [ngModel]="exchangeRatesModel.usdSell"
+                 (ngModelChange)="exchangeRatesModel.usdSell=$event"
                  [value]="getConvertedUahToUsd()"
                  type="number">
         </mat-form-field>
@@ -24,7 +25,8 @@
         <mat-form-field class="example-full-width">
           <input matInput
                  type="number"
-                 [(ngModel)]="exchangeRatesModel.uahSell"
+                 [ngModel]="exchangeRatesModel.uahSell"
+                 (ngModelChange)="exchangeRatesModel.uahSell=$event"
                  [value]="getConvertedUsdToUah()">
         </mat-form-field>
       </mat-list-item>
